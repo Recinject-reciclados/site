@@ -1,0 +1,43 @@
+/* home.css (somente conteúdo do <main>) */
+
+.home-intro {
+  padding: 18px;
+}
+
+.home-intro-inner {
+  align-items: center;
+}
+
+.home-bullets {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+@media (min-width: 860px) {
+  .home-bullets { grid-template-columns: 1fr 1fr; }
+}
+
+.home-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.home-diffs {
+  margin-top: 18px;
+}
+
+.diff {
+  padding: 16px;
+}
+.diff h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.diff p {
+  margin: 0;
+  color: rgba(13,27,36,.72);
+  line-height: 1.5;
+}

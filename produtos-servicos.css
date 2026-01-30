@@ -1,0 +1,28 @@
+/* produtos-servicos.css - estilos somente do <main> da página Produtos e Serviços */
+
+.produtos-list{
+  gap: 1rem;
+}
+
+.prod-item{
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.prod-text h3{
+  margin: 0 0 .4rem;
+  color: #192233;
+}
+
+@media (min-width: 900px){
+  .prod-item{
+    grid-template-columns: 1.15fr .85fr;
+  }
+  .prod-item:nth-child(even){
+    grid-template-columns: .85fr 1.15fr;
+  }
+  .prod-item:nth-child(even) .prod-text{
+    order: 2;
+  }
+}

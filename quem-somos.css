@@ -1,0 +1,46 @@
+/* quem-somos.css (somente conteúdo do <main>) */
+
+.qs-top {
+  padding: 18px;
+}
+
+.qs-grid {
+  align-items: center;
+}
+
+.qs-text {
+  margin: 0;
+  color: rgba(13,27,36,.75);
+  line-height: 1.6;
+}
+
+.qs-obj {
+  margin-top: 18px;
+}
+
+.qs-obj-card {
+  padding: 16px 18px;
+}
+.qs-obj-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(13,27,36,.78);
+  font-weight: 650;
+}
+
+.qs-values {
+  margin-top: 14px;
+}
+
+.qs-item {
+  padding: 16px;
+}
+.qs-item h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.qs-item p {
+  margin: 0;
+  color: rgba(13,27,36,.72);
+  line-height: 1.5;
+}
