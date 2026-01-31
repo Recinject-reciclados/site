@@ -225,7 +225,7 @@
       res = await fetch("template-padrao.html.txt", { cache: "no-cache" });
     } catch (err) {
       console.error(err);
-      throw new Error("Falha ao carregar template-padrao.html.txt. Rode via Live Server ou GitHub Pages.");
+      throw new Error("Falha ao carregar template-padrao.html. Rode via Live Server ou GitHub Pages.");
     }
 
     if (!res.ok) {
@@ -235,11 +235,7 @@
     const text = await res.text();
     const doc = new DOMParser().parseFromString(text, "text/html");
 
-    // 1) Injeta CSS global do template no <head> (apenas uma vez)
-    const globalStyle = doc.querySelector("style[data-global-style]");
-    if (globalStyle && !document.getElementById(globalStyle.id)) {
-      document.head.appendChild(globalStyle.cloneNode(true));
-    }
+
 
     // 2) Injetar header/hero/footer
     const targets = $$("[data-include]");
@@ -281,9 +277,8 @@
     `;
     msg.innerHTML = `
       <strong>Não foi possível carregar o template do site.</strong><br/>
-      ${location.protocol === "file:" ? "Você está abrindo via <code>file://</code>. Use o <b>Live Server</b> no VS Code." : "Verifique se o arquivo <code>template-padrao.html.txt</code> está na raiz e acessível."}
+      ${location.protocol === "file:" ? "Você está abrindo via <code>file://</code>. Use o <b>Live Server</b> no VS Code." : "Verifique se o arquivo <code>template-padrao.html</code> está na raiz e acessível."}
     `;
     document.body.prepend(msg);
   });
- 
 })();
