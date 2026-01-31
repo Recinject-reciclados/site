@@ -236,10 +236,14 @@
     const doc = new DOMParser().parseFromString(text, "text/html");
 
     // 1) Injeta CSS global do template no <head> (apenas uma vez)
-    const globalStyle = doc.querySelector("style[style.css]");
-    if (globalStyle && !document.getElementById(globalStyle.id)) {
-      document.head.appendChild(globalStyle.cloneNode(true));
-    }
+const globalStyle = doc.querySelector('link[data-global-style]');
+if (globalStyle && !document.getElementById(globalStyle.id)) {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = globalStyle.href;
+  document.head.appendChild(link);
+}
+
 
     // 2) Injetar header/hero/footer
     const targets = $$("[data-include]");

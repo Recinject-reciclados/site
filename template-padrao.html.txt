@@ -3,537 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Template Padrão - Recinject</title>
 
   <!--
-    ESTE ARQUIVO É A "FONTE ÚNICA" do header/hero/footer + CSS global.
-    Ele NÃO é uma página do site. Ele é carregado via fetch() pelo include.js.
+    TEMPLATE ESTRUTURAL
+    Header • Hero • Footer
+    CSS vem do style.css (não fica aqui)
   -->
 
-<link rel="stylesheet" href="style.css">
-
-    /* =========================
-       RESET / BASE
-    ========================== */
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #0d1b24; background: #f6f8fb; }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    :focus-visible { outline: 3px solid rgba(36, 153, 199, 0.55); outline-offset: 2px; border-radius: 10px; }
-
-    /* =========================
-       VARIÁVEIS / TIPOGRAFIA
-    ========================== */
-    :root{
-      --bg: #f6f8fb;
-      --surface: rgba(255,255,255,.82);
-      --surface-2: rgba(255,255,255,.92);
-
-      --text: #0d1b24;
-      --muted: rgba(13, 27, 36, .72);
-
-      --brand: #2aa6c8;          /* teal/azul */
-      --brand-2: #1b6f88;        /* azul mais escuro */
-      --brand-dark: #0f3f4f;
-
-      --line: rgba(13, 27, 36, .12);
-      --shadow: 0 18px 50px rgba(0,0,0,.12);
-
-      --container: 1100px;
-      --radius: 18px;
-
-      --header-h: 72px;
-
-      /* Hero */
-      --hero-overlay: .72;
-    }
-
-    .container{
-      width: min(var(--container), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .pill{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(255,255,255,.35);
-      box-shadow: 0 10px 28px rgba(0,0,0,.12);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.25);
-      background: rgba(255,255,255,.85);
-      color: var(--brand-dark);
-      font-weight: 700;
-      box-shadow: 0 12px 30px rgba(0,0,0,.14);
-      transition: transform .15s ease, filter .15s ease, background .15s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-    .btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
-    .btn:active{ transform: translateY(0px); }
-
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(42,166,200,.92), rgba(27,111,136,.92));
-      color: white;
-      border-color: rgba(255,255,255,.18);
-    }
-
-    .chip{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(13,27,36,.12);
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    /* Espaço reservado: header fixo */
-    .page-top-space{ height: var(--header-h); }
-
-    /* =========================
-       SKIP LINK (acessibilidade)
-    ========================== */
-    .skip-link{
-      position: absolute;
-      left: 12px;
-      top: 10px;
-      padding: 10px 12px;
-      border-radius: 10px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 12px 30px rgba(0,0,0,.15);
-      transform: translateY(-140%);
-      transition: transform .2s ease;
-      z-index: 9999;
-    }
-    .skip-link:focus{ transform: translateY(0); }
-
-    /* =========================
-       HEADER FIXO / MENU
-    ========================== */
-    .site-header{
-      position: fixed;
-      inset: 0 0 auto 0;
-      height: var(--header-h);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      background: rgba(10, 26, 34, .30);
-      border-bottom: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    .header-inner{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .brand{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      color: white;
-      letter-spacing: .2px;
-    }
-    .brand img{
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      filter: drop-shadow(0 12px 28px rgba(0,0,0,.25));
-    }
-    .brand .brand-text{
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05;
-    }
-    .brand .brand-text strong{ font-size: 16px; }
-    .brand .brand-text span{
-      font-size: 11px;
-      letter-spacing: .22em;
-      opacity: .85;
-      text-transform: uppercase;
-    }
-
-    .nav{
-      display: none;
-      align-items: center;
-      gap: 18px;
-      color: rgba(255,255,255,.90);
-      font-weight: 600;
-    }
-    .nav a{
-      padding: 10px 10px;
-      border-radius: 12px;
-      transition: background .15s ease, color .15s ease;
-    }
-    .nav a:hover{ background: rgba(255,255,255,.12); }
-    .nav a.is-active{
-      background: rgba(255,255,255,.18);
-      color: #fff;
-    }
-
-    .header-actions{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .cta-top{
-      display: none;
-    }
-
-    .menu-btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.12);
-      color: #fff;
-      cursor: pointer;
-    }
-    .menu-icon{
-      width: 18px; height: 14px; position: relative;
-    }
-    .menu-icon span{
-      position: absolute;
-      left: 0; right: 0;
-      height: 2px;
-      background: #fff;
-      border-radius: 999px;
-      transition: transform .2s ease, top .2s ease, opacity .2s ease;
-    }
-    .menu-icon span:nth-child(1){ top: 0; }
-    .menu-icon span:nth-child(2){ top: 6px; }
-    .menu-icon span:nth-child(3){ top: 12px; }
-
-    /* Mobile panel */
-    .mobile-panel{
-      position: fixed;
-      inset: var(--header-h) 0 auto 0;
-      background: rgba(10, 26, 34, .92);
-      border-bottom: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      transform: translateY(-120%);
-      transition: transform .22s ease;
-      z-index: 999;
-    }
-    .mobile-panel.open{ transform: translateY(0); }
-
-    .mobile-nav{
-      padding: 14px 0 18px;
-      display: grid;
-      gap: 8px;
-      color: rgba(255,255,255,.92);
-      font-weight: 700;
-    }
-    .mobile-nav a{
-      padding: 14px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .mobile-nav a.is-active{ background: rgba(255,255,255,.18); }
-
-    /* Estado aberto do botão */
-    .menu-open .menu-icon span:nth-child(1){ top: 6px; transform: rotate(45deg); }
-    .menu-open .menu-icon span:nth-child(2){ opacity: 0; }
-    .menu-open .menu-icon span:nth-child(3){ top: 6px; transform: rotate(-45deg); }
-
-    @media (min-width: 920px){
-      .nav{ display: inline-flex; }
-      .cta-top{ display: inline-flex; }
-      .menu-btn{ display: none; }
-      .mobile-panel{ display: none; }
-    }
-
-    /* =========================
-       HERO PADRÃO
-    ========================== */
-    .hero{
-      position: relative;
-      min-height: 520px;
-      display: grid;
-      align-items: end;
-      background: #0b2530;
-      overflow: clip;
-      isolation: isolate;
-    }
-
-    .hero-bg{
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.02);
-      filter: contrast(1.02);
-      z-index: -2;
-    }
-
-    .hero::before{
-      /* véu / overlay configurável por variável */
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(8, 20, 26, var(--hero-overlay)),
-        rgba(8, 20, 26, calc(var(--hero-overlay) - .12))
-      );
-      z-index: -1;
-    }
-
-    .hero-inner{
-      padding: 72px 0 70px;
-      color: #fff;
-      text-align: center;
-    }
-
-    .hero-logo{
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 14px;
-      filter: drop-shadow(0 20px 38px rgba(0,0,0,.35));
-    }
-
-    .hero h1{
-      margin: 0;
-      font-size: clamp(28px, 4vw, 46px);
-      letter-spacing: .3px;
-      text-shadow: 0 18px 36px rgba(0,0,0,.35);
-    }
-
-    .hero .subtitle{
-      margin: 10px auto 0;
-      font-weight: 650;
-      opacity: .92;
-    }
-
-    .hero .lead{
-      margin: 12px auto 0;
-      max-width: 760px;
-      opacity: .88;
-      line-height: 1.55;
-    }
-
-    .hero-crumbs{
-      margin-top: 12px;
-      font-weight: 700;
-      opacity: .82;
-    }
-
-    .hero-actions{
-      margin-top: 18px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    /* Curva branca na base */
-    .hero::after{
-      content:"";
-      position:absolute;
-      left:-20%;
-      right:-20%;
-      bottom:-2px;
-      height: 140px;
-      background: rgba(246, 248, 251, .95);
-      border-top-left-radius: 50% 80%;
-      border-top-right-radius: 50% 80%;
-      z-index: 0;
-      filter: blur(.0px);
-    }
-
-    /* Conteúdo abaixo do hero deve ficar acima da curva */
-    .after-hero{
-      position: relative;
-      z-index: 1;
-      margin-top: -70px;
-      padding-bottom: 12px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-    .site-footer{
-      background: linear-gradient(180deg, rgba(10, 26, 34, .96), rgba(10, 26, 34, 1));
-      color: rgba(255,255,255,.92);
-      border-top: 1px solid rgba(255,255,255,.10);
-      margin-top: 48px;
-    }
-
-    .footer-inner{
-      padding: 26px 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .footer-title{
-      font-weight: 850;
-      font-size: 18px;
-      letter-spacing: .2px;
-    }
-
-    .footer-sub{
-      opacity: .86;
-      line-height: 1.45;
-    }
-
-    .footer-meta{
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      opacity: .88;
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding-top: 12px;
-      font-weight: 650;
-    }
-
-    /* =========================
-       AJUDAS (títulos/padrões)
-    ========================== */
-    .section-title{
-      font-size: clamp(20px, 2.8vw, 30px);
-      margin: 0 0 10px;
-      letter-spacing: .2px;
-    }
-    .section-lead{
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-  </style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- =========================
-       TEMPLATE: HEADER
-  ========================== -->
-  <template id="tpl-header">
-    <header class="site-header" role="banner">
-      <div class="container header-inner">
-        <a class="brand" href="index.html" aria-label="Ir para a página inicial">
-          <!-- Sua imagem real na raiz (sem img/) -->
-          <img src="logo-recinject.jpeg" alt="Logo Recinject" onerror="this.style.display='none'"/>
-          <span class="brand-text">
-            <strong>Recinject</strong>
-            <span>Reciclados</span>
+
+<!-- =========================
+     TEMPLATE: HEADER
+========================== -->
+<template id="tpl-header">
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html">
+        <img src="logo-recinject.jpeg" alt="Recinject">
+        <span class="brand-text">
+          <strong>Recinject</strong>
+          <span>Reciclados</span>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a data-nav="home" href="index.html">Início</a>
+        <a data-nav="quem" href="quem-somos.html">Quem Somos</a>
+        <a data-nav="prod" href="produtos-servicos.html">Produtos e Serviços</a>
+        <a data-nav="cont" href="contato.html">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn cta-top" href="contato.html">Fale conosco</a>
+
+        <button class="menu-btn" data-menu-btn aria-expanded="false">
+          <span class="menu-icon">
+            <span></span><span></span><span></span>
           </span>
-        </a>
+        </button>
+      </div>
+    </div>
 
-        <nav class="nav" aria-label="Menu principal">
-          <a data-nav="home" href="index.html">Início</a>
-          <a data-nav="quem" href="quem-somos.html">Quem Somos</a>
-          <a data-nav="prod" href="produtos-servicos.html">Produtos e Serviços</a>
-          <a data-nav="cont" href="contato.html">Contato</a>
-        </nav>
+    <div class="mobile-panel" data-mobile-panel hidden>
+      <div class="container mobile-nav">
+        <a data-nav="home" href="index.html">Início</a>
+        <a data-nav="quem" href="quem-somos.html">Quem Somos</a>
+        <a data-nav="prod" href="produtos-servicos.html">Produtos e Serviços</a>
+        <a data-nav="cont" href="contato.html">Contato</a>
+        <a class="btn primary" href="contato.html">Fale conosco</a>
+      </div>
+    </div>
+  </header>
 
-        <div class="header-actions">
-          <a class="btn cta-top" href="contato.html">Fale conosco</a>
+  <div class="page-top-space"></div>
+</template>
 
-          <!-- Botão mobile -->
-          <button
-            class="menu-btn"
-            type="button"
-            aria-label="Abrir menu"
-            aria-controls="mobilePanel"
-            aria-expanded="false"
-            data-menu-btn
-          >
-            <span class="menu-icon" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </span>
-          </button>
-        </div>
+<!-- =========================
+     TEMPLATE: HERO
+========================== -->
+<template id="tpl-hero">
+  <section class="hero">
+    <div class="hero-bg" data-hero-bg></div>
+
+    <div class="container hero-inner">
+      <img class="hero-logo" data-hero-logo src="logo-recinject.jpeg">
+
+      <h1 data-hero-title></h1>
+      <div class="subtitle" data-hero-subtitle hidden></div>
+      <p class="lead" data-hero-lead hidden></p>
+
+      <div class="hero-crumbs" data-hero-crumbs></div>
+
+      <div class="hero-actions" data-hero-actions hidden>
+        <a class="btn primary" data-hero-button></a>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- =========================
+     TEMPLATE: FOOTER
+========================== -->
+<template id="tpl-footer">
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-title">Recinject Reciclados</div>
+
+      <div class="footer-sub">
+        Reciclagem de plásticos em São José dos Pinhais e Região Metropolitana de Curitiba.
       </div>
 
-      <!-- Painel mobile -->
-      <div class="mobile-panel" id="mobilePanel" data-mobile-panel hidden>
-        <div class="container">
-          <nav class="mobile-nav" aria-label="Menu mobile">
-            <a data-nav="home" href="index.html">Início</a>
-            <a data-nav="quem" href="quem-somos.html">Quem Somos</a>
-            <a data-nav="prod" href="produtos-servicos.html">Produtos e Serviços</a>
-            <a data-nav="cont" href="contato.html">Contato</a>
-            <a class="btn primary" style="justify-content:center" href="contato.html">Fale conosco</a>
-          </nav>
-        </div>
+      <div class="footer-meta">
+        <div>São José dos Pinhais • PR</div>
+        <div>© <span data-year></span> Recinject Reciclados</div>
       </div>
-    </header>
 
-    <!-- espaço para compensar header fixo -->
-    <div class="page-top-space" aria-hidden="true"></div>
-  </template>
+    </div>
+  </footer>
+</template>
 
-  <!-- =========================
-       TEMPLATE: HERO
-  ========================== -->
-  <template id="tpl-hero">
-    <section class="hero" aria-label="Capa da página">
-      <div class="hero-bg" data-hero-bg></div>
-
-      <div class="container hero-inner">
-        <img class="hero-logo" data-hero-logo src="logo-recinject.jpeg" alt="Logo Recinject" />
-
-        <h1 data-hero-title>...</h1>
-        <div class="subtitle" data-hero-subtitle hidden></div>
-        <p class="lead" data-hero-lead hidden></p>
-
-        <div class="hero-crumbs" data-hero-crumbs aria-label="Breadcrumb"></div>
-
-        <div class="hero-actions" data-hero-actions hidden>
-          <a class="btn primary" data-hero-button href="#" rel="noopener">Botão</a>
-        </div>
-      </div>
-    </section>
-  </template>
-
-  <!-- =========================
-       TEMPLATE: FOOTER
-  ========================== -->
-  <template id="tpl-footer">
-    <footer class="site-footer" role="contentinfo">
-      <div class="container footer-inner">
-        <div class="footer-title">Recinject Reciclados</div>
-        <div class="footer-sub">
-          Reciclagem de plásticos em São José dos Pinhais e Região Metropolitana de Curitiba.
-        </div>
-        <div class="footer-meta">
-          <div>São José dos Pinhais • PR</div>
-          <div>
-            <span>© <span data-year></span> Recinject Reciclados.</span>
-            <span> - CNPJ: 47.807.223/0001-29</span>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </template>
 </body>
 </html>
