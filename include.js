@@ -235,7 +235,11 @@
     const text = await res.text();
     const doc = new DOMParser().parseFromString(text, "text/html");
 
-
+    // 1) Injeta CSS global do template no <head> (apenas uma vez)
+    const globalStyle = doc.querySelector("style[style.css]");
+    if (globalStyle && !document.getElementById(globalStyle.id)) {
+      document.head.appendChild(globalStyle.cloneNode(true));
+    }
 
     // 2) Injetar header/hero/footer
     const targets = $$("[data-include]");
