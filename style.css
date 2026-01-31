@@ -1,6 +1,6 @@
 /* style.css
    - CSS global para conteúdo de páginas (main)
-   - NÃO repetir header/hero/footer aqui (isso está no template-padrao.html)
+   - NÃO repetir header/hero/footer aqui (isso está no template-padrao.html.txt)
 */
 
 main {
@@ -82,4 +82,5 @@ main {
   font-size: 14px;
   color: rgba(13,27,36,.72);
   line-height: 1.5;
+
 }
