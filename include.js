@@ -222,14 +222,14 @@
   async function injectIncludes() {
     let res;
     try {
-      res = await fetch("template-padrao.html", { cache: "no-cache" });
+      res = await fetch("template-padrao.html.txt", { cache: "no-cache" });
     } catch (err) {
       console.error(err);
-      throw new Error("Falha ao carregar template-padrao.html. Rode via Live Server ou GitHub Pages.");
+      throw new Error("Falha ao carregar template-padrao.html.txt. Rode via Live Server ou GitHub Pages.");
     }
 
     if (!res.ok) {
-      throw new Error(`Não foi possível carregar template-padrao.html (HTTP ${res.status}).`);
+      throw new Error(`Não foi possível carregar template-padrao.html.txt (HTTP ${res.status}).`);
     }
 
     const text = await res.text();
@@ -281,8 +281,9 @@
     `;
     msg.innerHTML = `
       <strong>Não foi possível carregar o template do site.</strong><br/>
-      ${location.protocol === "file:" ? "Você está abrindo via <code>file://</code>. Use o <b>Live Server</b> no VS Code." : "Verifique se o arquivo <code>template-padrao.html</code> está na raiz e acessível."}
+      ${location.protocol === "file:" ? "Você está abrindo via <code>file://</code>. Use o <b>Live Server</b> no VS Code." : "Verifique se o arquivo <code>template-padrao.html.txt</code> está na raiz e acessível."}
     `;
     document.body.prepend(msg);
   });
+ 
 })();
