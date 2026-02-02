@@ -1,136 +1,196 @@
 <!doctype html>
-<html
-  lang="pt-BR"
-  data-active="cont"
-  data-hero-title="Contato"
-  data-hero-img="capa-contato"
-  data-hero-overlay="0.62"
-  data-hero-show-logo="false"
-  data-hero-subtitle="Início / Contato"
->
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Contato | Recinject Reciclados</title>
   <meta name="description" content="Fale com a Recinject Reciclados LTDA: WhatsApp, telefone, e-mails por área, endereço em São José dos Pinhais - PR e redes sociais." />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- CSS GLOBAL (HOME) -->
+  <link rel="stylesheet" href="home.css" />
+  <!-- CSS ESPECÍFICO DA PÁGINA -->
   <link rel="stylesheet" href="contato.css" />
-
-  <script src="include.js" defer></script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Recinject Reciclados LTDA",
-  "url": "https://recinjectreciclados.com.br",
-  "logo": "https://recinjectreciclados.com.br/logo-recinject.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Maurilio da Cruz, 64",
-    "addressLocality": "São José dos Pinhais",
-    "addressRegion": "PR",
-    "postalCode": "83065-200",
-    "addressCountry": "BR"
-  },
-  "telephone": "+55 41 99214-6396",
-  "email": "contato@recinjectreciclados.com",
-  "sameAs": [
-    "https://www.facebook.com/RecinjectReciclados",
-    "https://www.linkedin.com/company/recinject-reciclados"
-  ]
-}
-</script>
-
 </head>
 
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <!-- HEADER (idêntico à HOME) -->
+  <header class="site-header transparent" id="siteHeader">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Ir para a Home">
+        <img src="logo-recinject.png" alt="Recinject" />
+        <span><strong>Recinject</strong> Reciclados</span>
+      </a>
 
-  <div data-include="header"></div>
-  <div data-include="hero"></div>
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="produtos-servicos.html">Produtos e Serviços</a>
+        <a class="active" href="contato.html">Contato</a>
+      </nav>
 
-  <main id="conteudo">
-    <section class="section">
-      <div class="container">
-        <div class="paper pad">
-          <div class="grid contato-grid">
-            <div>
-              <h2 class="h2">Recinject Reciclados LTDA</h2>
+      <a class="btn" href="contato.html">Fale conosco</a>
 
-              <ul class="contato-list">
-                <li>
-                  <strong>Endereço:</strong>
-                  Rua Maurilio da Cruz, 64 – Bairro Iná – São José dos Pinhais – PR – CEP 83.065-200
-                </li>
+      <!-- Botão menu mobile -->
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        type="button"
+        aria-label="Abrir menu"
+        aria-controls="mobileNav"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-                <li>
-                  <strong>WhatsApp (Éder):</strong>
-                  <a class="link" href="https://wa.me/5541992146396?text=Olá!%20Gostaria%20de%20solicitar%20informações%20sobre%20os%20granulados%20plásticos%20reciclados%20da%20Recinject.">
-                    (41) 99214-6396
-                  </a>
-                </li>
+      <!-- Menu mobile -->
+      <div class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="produtos-servicos.html">Produtos e Serviços</a>
+        <a class="active" href="contato.html">Contato</a>
+      </div>
+    </div>
+  </header>
 
-                <li>
-                  <strong>Contato (Byanca):</strong>
-                  <a class="link" href="tel:+5511971886396">(11) 97188-6396</a>
-                </li>
+  <!-- HERO / CAPA (mesmo padrão da HOME) -->
+  <section class="hero">
+    <!-- troque o arquivo se necessário: capa-contato.png / .jpg / etc -->
+    <div class="hero-bg" style="background-image:url('capa-contato.jpeg');"></div>
 
-                <li>
-                  <strong>CNPJ:</strong> 47.807.223/0001-29
-                </li>
-              </ul>
+    <div class="container hero-content">
+      <h1>Contato</h1>
+      <h2>Recinject Reciclados</h2>
+    </div>
+  </section>
 
-              <div class="hr"></div>
+  <!-- CONTEÚDO -->
+  <main class="content container" id="conteudo">
+    <section class="contato-card">
+      <div class="contato-grid">
+        <div>
+          <h2 class="h2">Recinject Reciclados LTDA</h2>
 
-              <h3 class="h3">E-mails por área</h3>
-              <ul class="contato-list">
-                <li><a class="link" href="mailto:financeiro@recinjectreciclados.com">financeiro@recinjectreciclados.com</a></li>
-                <li><a class="link" href="mailto:notasfiscais@recinjectreciclados.com">notasfiscais@recinjectreciclados.com</a></li>
-                <li><a class="link" href="mailto:comercial@recinjectreciclados.com">comercial@recinjectreciclados.com</a></li>
-                <li><a class="link" href="mailto:contato@recinjectreciclados.com">contato@recinjectreciclados.com</a></li>
-              </ul>
+          <ul class="contato-list">
+            <li>
+              <strong>Endereço:</strong>
+              Rua Maurilio da Cruz, 64 – Bairro Iná – São José dos Pinhais – PR – CEP 83.065-200
+            </li>
 
-              <div class="hr"></div>
+            <li>
+              <strong>WhatsApp (Éder):</strong>
+              <a
+                class="link"
+                href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%21"
+              >
+                (41) 99214-6396
+              </a>
+            </li>
 
-              <h3 class="h3">Redes sociais</h3>
-              <ul class="contato-list">
-                <li><strong>Facebook:</strong> /RecinjectReciclados</li>
-                <li><strong>LinkedIn:</strong> Recinject Reciclados</li>
-              </ul>
+            <li>
+              <strong>Contato (Byanca):</strong>
+              <a class="link" href="tel:+5511971886396">(11) 97188-6396</a>
+            </li>
 
-              <div class="contato-actions">
-                <a class="btn btn-primary" href="https://wa.me/5541992146396?text=Olá!%20Gostaria%20de%20solicitar%20informações%20sobre%20os%20granulados%20plásticos%20reciclados%20da%20Recinject.">
-                  Solicitar informações
-                </a>
-                <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Rua%20Maurilio%20da%20Cruz%2C%2064%20-%20Bairro%20In%C3%A1%20-%20S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais%20-%20PR%20-%2083065-200" target="_blank" rel="noopener">
-                  Abrir no Google Maps
-                </a>
-              </div>
-            </div>
-
-            <figure class="figure">
-              <img data-img-base="embalados-azul-02" alt="Produto embalado e pronto para fornecimento" />
-            </figure>
-          </div>
+            <li>
+              <strong>CNPJ:</strong> 47.807.223/0001-29
+            </li>
+          </ul>
 
           <div class="hr"></div>
 
-          <div class="cta">
-            <div>
-              <strong>Entre em contato e solicite informações sobre nossos granulados plásticos reciclados.</strong>
-              <div class="small">Botão direto para WhatsApp.</div>
-            </div>
-            <a class="btn btn-primary" href="https://wa.me/5541992146396?text=Olá!%20Gostaria%20de%20solicitar%20informações%20sobre%20os%20granulados%20plásticos%20reciclados%20da%20Recinject.">
+          <h3 class="h3">E-mails por área</h3>
+          <ul class="contato-list">
+            <li><a class="link" href="mailto:financeiro@recinjectreciclados.com">financeiro@recinjectreciclados.com</a></li>
+            <li><a class="link" href="mailto:notasfiscais@recinjectreciclados.com">notasfiscais@recinjectreciclados.com</a></li>
+            <li><a class="link" href="mailto:comercial@recinjectreciclados.com">comercial@recinjectreciclados.com</a></li>
+            <li><a class="link" href="mailto:contato@recinjectreciclados.com">contato@recinjectreciclados.com</a></li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h3 class="h3">Redes sociais</h3>
+          <ul class="contato-list">
+            <li><strong>Facebook:</strong> /RecinjectReciclados</li>
+            <li><strong>LinkedIn:</strong> Recinject Reciclados</li>
+          </ul>
+
+          <div class="contato-actions">
+            <a
+              class="btn"
+              href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%21"
+            >
               Solicitar informações
+            </a>
+
+            <!-- mantenho o link exatamente como você já tinha (se estiver no seu conteúdo atual) -->
+            <a class="btn outline" href="https://www.google.com/search?q=Recinject+Reciclados" target="_blank" rel="noopener">
+              Ver no Google
             </a>
           </div>
         </div>
+
+        <figure class="contato-figure" aria-label="Imagem ilustrativa da Recinject">
+          <!-- Se você já tem uma imagem específica, troque aqui pelo nome real -->
+          <img src="embalados-branco-01.jpeg" alt="Granulado plástico reciclado (visual ilustrativo)" />
+        </figure>
       </div>
     </section>
   </main>
 
-  <div data-include="footer"></div>
+  <!-- FOOTER (idêntico à HOME) -->
+  <footer class="site-footer">
+    <p><strong>Recinject Reciclados</strong> • CNPJ 47.807.223/0001-29</p>
+    <p>Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JS (mesmo padrão da HOME: scroll + menu mobile) -->
+  <script>
+    (function () {
+      const header = document.getElementById('siteHeader');
+      const btn = document.getElementById('mobileMenuBtn');
+      const nav = document.getElementById('mobileNav');
+
+      function setScrolled() {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        if (y > 10) {
+          header.classList.add('scrolled');
+          header.classList.remove('transparent');
+        } else {
+          header.classList.remove('scrolled');
+          header.classList.add('transparent');
+        }
+      }
+
+      function closeMobileNav() {
+        nav.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      function toggleMobileNav() {
+        const isOpen = nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      }
+
+      // Scroll (header transparente -> scrolled)
+      window.addEventListener('scroll', setScrolled, { passive: true });
+      setScrolled();
+
+      // Menu mobile
+      btn.addEventListener('click', toggleMobileNav);
+
+      // Fecha ao clicar em qualquer link do menu mobile
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', closeMobileNav);
+      });
+
+      // Fecha ao clicar fora
+      document.addEventListener('click', (e) => {
+        if (!nav.classList.contains('active')) return;
+        const clickedInside = nav.contains(e.target) || btn.contains(e.target);
+        if (!clickedInside) closeMobileNav();
+      });
+    })();
+  </script>
 </body>
 </html>

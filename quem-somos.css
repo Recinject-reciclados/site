@@ -1,46 +1,112 @@
-/* quem-somos.css (somente conteúdo do <main>) */
+/* =========================================================
+   quem-somos.css
+   - SOMENTE estilos do <main> da página Quem Somos
+   - Não repetir header/hero/footer (isso já vem do home.css)
+========================================================= */
 
-.qs-top {
-  padding: 18px;
-}
-
-.qs-grid {
-  align-items: center;
-}
-
-.qs-text {
-  margin: 0;
-  color: rgba(13,27,36,.75);
-  line-height: 1.6;
+.qs-intro {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.qs-obj {
-  margin-top: 18px;
+.kicker{
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.55);
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.qs-obj-card {
-  padding: 16px 18px;
-}
-.qs-obj-card p {
-  margin: 0;
-  line-height: 1.6;
-  color: rgba(13,27,36,.78);
-  font-weight: 650;
+.section-title{
+  font-size: 28px;
+  margin-bottom: 14px;
+  color: #004d40;
 }
 
-.qs-values {
-  margin-top: 14px;
-}
-
-.qs-item {
-  padding: 16px;
-}
-.qs-item h3 {
-  margin: 0 0 8px;
+.section-lead{
   font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #333;
 }
-.qs-item p {
-  margin: 0;
-  color: rgba(13,27,36,.72);
+
+.qs-text{
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(0,0,0,.78);
+}
+
+/* Grid simples (mobile-first) */
+.grid{
+  display: grid;
+  gap: 22px;
+}
+
+@media (min-width: 900px){
+  .grid.cols-2{
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+  }
+  .grid.cols-3{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.media{
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+
+.media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cards */
+.card{
+  background: #f2f2f2;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.qs-obj{
+  margin-bottom: 30px;
+}
+
+.qs-obj-card{
+  margin: 14px 0 20px;
+}
+
+.qs-item h3{
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #004d40;
+}
+
+.qs-item p{
+  color: rgba(0,0,0,.72);
   line-height: 1.5;
+}
+
+/* CTA final */
+.cta-final{
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(0,77,64,.08);
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.small{
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(0,0,0,.65);
 }

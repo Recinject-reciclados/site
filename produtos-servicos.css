@@ -19,9 +19,11 @@
   .prod-item{
     grid-template-columns: 1.15fr .85fr;
   }
+
   .prod-item:nth-child(even){
     grid-template-columns: .85fr 1.15fr;
   }
+
   .prod-item:nth-child(even) .prod-text{
     order: 2;
   }

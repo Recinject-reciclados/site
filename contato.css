@@ -1,0 +1,89 @@
+/* =========================
+   CONTATO — CSS específico
+   (somente o conteúdo do <main>)
+========================= */
+
+.contato-card{
+  background:#fff;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.contato-grid{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.h2{
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.h3{
+  font-size: 18px;
+  margin: 14px 0 10px;
+}
+
+.contato-list{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.contato-list li{
+  padding: 10px 0;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.contato-list li:last-child{
+  border-bottom: 0;
+}
+
+.link{
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hr{
+  height: 1px;
+  background: rgba(0,0,0,.08);
+  margin: 18px 0;
+}
+
+.contato-actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.contato-figure{
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.contato-figure img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsivo */
+@media (max-width: 900px){
+  .contato-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px){
+  .contato-card{
+    padding: 20px;
+  }
+}

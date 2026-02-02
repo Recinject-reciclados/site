@@ -1,134 +1,138 @@
-<!doctype html>
-<html
-  lang="pt-BR"
-  data-active="home"
-  data-hero-title="Recinject Reciclados"
-  data-hero-img="capa-home"
-  data-hero-overlay="0.68"
-  data-hero-show-logo="true"
-  data-hero-subtitle="Reciclagem de Plásticos"
-  data-hero-lead="Especialistas na fabricação de granulados plásticos PP reciclados pós-indústria, com qualidade, eficiência e compromisso ambiental."
-  data-hero-show-button="true"
-  data-hero-button-href="https://wa.me/5541992146396"
-  data-hero-button-text="Falar com a Recinject"
->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Recinject Reciclados | Granulados plásticos reciclados PP</title>
-  <meta
-    name="description"
-    content="Recinject Reciclados LTDA: reciclagem de plásticos e produção de granulados PP reciclados pós-indústria em São José dos Pinhais - PR."
-  />
-
-  <link rel="canonical" href="https://recinjectreciclados.com.br/">
-  
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recinject Reciclados | Reciclagem de Plásticos em São José dos Pinhais</title>
+  <meta name="description" content="Especialistas em reciclagem de plásticos PP pós-indústria. Alta qualidade, eficiência e compromisso ambiental." />
+  <meta name="keywords" content="Reciclagem, Plásticos, Granulado PP, Sustentabilidade, São José dos Pinhais, Recinject" />
   <link rel="stylesheet" href="home.css" />
-  <script src="include.js" defer></script>
-  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Recinject Reciclados LTDA",
-  "url": "https://recinjectreciclados.com.br",
-  "logo": "https://recinjectreciclados.com.br/logo-recinject.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Maurilio da Cruz, 64",
-    "addressLocality": "São José dos Pinhais",
-    "addressRegion": "PR",
-    "postalCode": "83065-200",
-    "addressCountry": "BR"
-  },
-  "telephone": "+55 41 99214-6396",
-  "email": "contato@recinjectreciclados.com",
-  "sameAs": [
-    "https://www.facebook.com/RecinjectReciclados",
-    "https://www.linkedin.com/company/recinject-reciclados"
-  ]
-}
+  <meta name="theme-color" content="#004d40" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recinject Reciclados",
+    "url": "https://recinject.com.br",
+    "logo": "logo-recinject.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São José dos Pinhais",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://wa.me/5541992146396"]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header transparent">
+  <div class="container">
+
+    <a href="index.html" class="logo">
+      <img src="logo-recinject.png" alt="Recinject Reciclados">
+      <span><strong>Recinject</strong> Reciclados</span>
+    </a>
+
+    <nav>
+      <a href="index.html" class="active">Início</a>
+      <a href="quem-somos.html">Quem Somos</a>
+      <a href="produtos-servicos.html">Produtos e Serviços</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <a href="contato.html" class="btn">Fale conosco</a>
+
+    <!-- BOTÃO MOBILE -->
+    <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="produtos-servicos.html">Produtos e Serviços</a>
+    <a href="contato.html">Contato</a>
+  </div>
+</header>
+
+
+  <script>
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('.site-header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
 </script>
 
-</head>
-
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-
-  <div data-include="header"></div>
-  <div data-include="hero"></div>
-
-  <main id="conteudo">
-    <div class="container after-hero">
-      <section class="home-intro card">
-        <div class="home-intro-inner grid cols-2">
-          <div>
-            <div class="kicker">Quem é a Recinject</div>
-            <h2 class="section-title">Reciclagem de matéria-prima plástica com foco em qualidade</h2>
-            <p class="section-lead">
-              A <strong>Recinject Reciclados</strong> é uma empresa localizada em <strong>São José dos Pinhais - PR</strong>,
-              especializada na transformação de resíduos plásticos pós-indústria em <strong>granulados reciclados</strong>
-              destinados à indústria de injeção.
-            </p>
-
-            <div class="home-bullets">
-              <div class="chip">✔ Granulados PP reciclados pós-indústria</div>
-              <div class="chip">✔ Processo de alta depuração</div>
-              <div class="chip">✔ Qualidade e confiabilidade</div>
-              <div class="chip">✔ Compromisso ambiental</div>
-            </div>
-
-            <div class="home-actions">
-              <a class="btn" href="quem-somos.html">Veja quem somos</a>
-              <a class="btn primary" href="produtos-servicos.html">Ver produtos e serviços</a>
-            </div>
-          </div>
-
-          <div class="media">
-            <!-- imagem real (não capa), na raiz -->
-            <img src="granulado-cinza-01.jpeg" alt="Granulado plástico reciclado em mãos" />
-          </div>
-        </div>
-      </section>
-
-      <section class="home-diffs">
-        <h2 class="section-title">Nossos Diferenciais</h2>
-        <p class="section-lead">Estrutura e processo voltados para entregar estabilidade, pureza e confiança para o seu uso industrial.</p>
-
-        <div class="grid cols-4">
-          <article class="diff card">
-            <h3>Qualidade na matéria-prima reciclada</h3>
-            <p>Granulados reciclados com padrão de desempenho e controle.</p>
-          </article>
-
-          <article class="diff card">
-            <h3>Processo de alta depuração</h3>
-            <p>Tecnologia aplicada para maior pureza e consistência.</p>
-          </article>
-
-          <article class="diff card">
-            <h3>Sustentabilidade</h3>
-            <p>Atuação responsável e foco na preservação ambiental.</p>
-          </article>
-
-          <article class="diff card">
-            <h3>Atendimento direto e transparente</h3>
-            <p>Comunicação clara e agilidade no suporte comercial.</p>
-          </article>
-        </div>
-
-        <div class="cta-final">
-          <div>
-            <strong>Entre em contato e solicite informações sobre nossos granulados plásticos reciclados.</strong>
-            <div class="small">Atendimento via WhatsApp com Éder: (41) 99214-6396</div>
-          </div>
-          <a class="btn primary" href="https://wa.me/5541992146396">Solicitar informações</a>
-        </div>
-      </section>
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('capa-home.png');"></div>
+    <div class="container hero-content">
+      <h1>Recinject</h1>
+      <h2>Reciclagem de Plásticos</h2>
+      <p>Especialistas na fabricação de <strong>granulados plásticos PP</strong> reciclados pós-indústria, com <strong>qualidade</strong>, <strong>eficiência</strong> e <strong>compromisso ambiental</strong>.</p>
+     <a 
+  class="btn outline" 
+  href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+  target="_blank">
+  Falar com a Recinject
+</a>
     </div>
+  </section>
+
+  <main class="content container">
+    <section class="sobre">
+      <div class="texto">
+        <h3>Quem é a Recinject</h3>
+        <p>A Recinject Reciclados é uma empresa localizada em <strong>São José dos Pinhais – PR</strong>, especializada na reciclagem de <strong>matéria-prima plástica</strong>. Atuamos na transformação de resíduos plásticos pós-indústria em <strong>granulados de alta qualidade</strong>, destinados à indústria de injeção plástica.</p>
+      </div>
+      <img src="granulado-carregamento.jpeg" alt="Granulados plásticos" />
+    </section>
+
+    <section class="diferenciais">
+      <h3>Nossos Diferenciais</h3>
+      <div class="cards">
+        <div class="card">
+          <img src="icon-materia.png" alt="">
+          <h4>Qualidade na matéria-prima reciclada</h4>
+          <p>Granulados reciclados de alta performance</p>
+        </div>
+        <div class="card">
+          <img src="icon-proc.png" alt="">
+          <h4>Processo de alta depuração</h4>
+          <p>Tecnologia avançada de purificação e controle</p>
+        </div>
+        <div class="card">
+          <img src="sustentabilidade.png" alt="">
+          <h4>Compromisso com sustentabilidade</h4>
+          <p>Atuação responsável e foco na preservação ambiental</p>
+        </div>
+        <div class="card">
+          <img src="atendimento.png" alt="">
+          <h4>Atendimento</h4>
+          <p>Direto e transparente</p>
+        </div>
+      </div>
+      <a class="btn" href="quem-somos.html">Veja quem somos</a>
+    </section>
   </main>
 
-  <div data-include="footer"></div>
+  <footer class="site-footer">
+    <p><strong>Recinject Reciclados</strong> • CNPJ 47.807.223/0001-29</p>
+    <p>São José dos Pinhais • PR. Todos os direitos reservados.</p>
+  </footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("mobileNav");
+  nav.classList.toggle("active");
+}
+
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+
 </body>
 </html>

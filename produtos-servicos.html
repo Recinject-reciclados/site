@@ -1,134 +1,181 @@
-<!doctype html>
-<html
-  lang="pt-BR"
-  data-active="prod"
-  data-hero-title="Produtos e Serviços"
-  data-hero-img="capa-produtos"
-  data-hero-overlay="0.62"
-  data-hero-show-logo="false"
-  data-hero-subtitle="Início / Produtos e Serviços"
->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Produtos e Serviços | Recinject Reciclados</title>
-  <meta name="description" content="Granulados PP reciclados pós-indústria com processo de alta depuração, fornecimento para indústria de injeção plástica e laboratório próprio para ensaios e desenvolvimento de cores." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="style.css" />
+  <title>Produtos e Serviços | Recinject Reciclados</title>
+
+  <meta
+    name="description"
+    content="Granulados PP reciclados pós-indústria, recebimento de matéria-prima e embalagens padronizadas. Recinject Reciclados em São José dos Pinhais - PR."
+  />
+  <meta
+    name="keywords"
+    content="granulado PP reciclado, reciclados, matéria-prima pós-indústria, reciclagem plásticos, São José dos Pinhais, Recinject, granulado plástico"
+  />
+  <meta name="theme-color" content="#004d40" />
+
+  <!-- CSS base/global (mesmo da HOME) -->
+  <link rel="stylesheet" href="home.css" />
+  <!-- CSS específico desta página -->
   <link rel="stylesheet" href="produtos-servicos.css" />
 
-  <script src="include.js" defer></script>
-
+  <!-- Schema (mantendo o padrão da HOME) -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Recinject Reciclados LTDA",
-  "url": "https://recinjectreciclados.com.br",
-  "logo": "https://recinjectreciclados.com.br/logo-recinject.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Maurilio da Cruz, 64",
-    "addressLocality": "São José dos Pinhais",
-    "addressRegion": "PR",
-    "postalCode": "83065-200",
-    "addressCountry": "BR"
-  },
-  "telephone": "+55 41 99214-6396",
-  "email": "contato@recinjectreciclados.com",
-  "sameAs": [
-    "https://www.facebook.com/RecinjectReciclados",
-    "https://www.linkedin.com/company/recinject-reciclados"
-  ]
-}
-</script>
-
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recinject Reciclados",
+    "url": "https://recinject.com.br",
+    "logo": "logo-recinject.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São José dos Pinhais",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://wa.me/5541992146396"]
+  }
+  </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <div data-include="header"></div>
-  <div data-include="hero"></div>
+  <!-- HEADER (idêntico à HOME) -->
+  <header class="site-header transparent">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="logo-recinject.png" alt="Recinject Reciclados" />
+        <span><strong>Recinject</strong> Reciclados</span>
+      </a>
 
-  <main id="conteudo">
-    <section class="section">
-      <div class="container">
-        <div class="paper pad">
-          <div class="grid grid-2">
-            <div>
-              <h2 class="h2">Plásticos PP reciclados</h2>
-              <p class="lead">
-                Transformação de resíduos-plásticos pós-indústria em granulados reciclados PP,
-                por meio de processos de alta depuração e <strong>controle de qualidade</strong>.
-              </p>
-            </div>
-            <figure class="figure">
-              <img data-img-base="granulado-verde-01" alt="Granulado reciclado (exemplo de cor e textura)" />
-            </figure>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="produtos-servicos.html" class="active">Produtos e Serviços</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <a href="contato.html" class="btn">Fale conosco</a>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE (mesmo padrão da HOME) -->
+  <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="produtos-servicos.html" class="active">Produtos e Serviços</a>
+    <a href="contato.html">Contato</a>
+    <a class="btn" href="contato.html">Fale conosco</a>
+  </div>
+
+  <!-- HERO (no mesmo estilo da HOME, com texto já existente) -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('capa-produtos.jpeg');"></div>
+    <div class="container hero-content">
+      <h1>Produtos e Serviços</h1>
+      <h2>Recinject Reciclados</h2>
+      <a class="btn outline"
+   href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%21">
+  Solicitar orçamento
+</a>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO (mantido do seu HTML) -->
+  <main class="content container" id="conteudo">
+    <section class="card">
+      <div class="kicker">Portfólio</div>
+      <h2 class="section-title">O que oferecemos</h2>
+      <p class="section-lead">
+        Produção de granulados plásticos PP reciclados pós-indústria, recebimento e controle de matéria-prima, além de opções de embalagens e fornecimento sob demanda.
+      </p>
+
+      <div class="produtos-list grid">
+        <article class="prod-item card">
+          <div class="prod-text">
+            <h3>Granulados PP reciclados pós-indústria</h3>
+            <p>
+              Granulado plástico reciclado com processo controlado para atender aplicações industriais, com foco em estabilidade e qualidade para injeção.
+            </p>
           </div>
-
-          <div class="hr"></div>
-
-          <div class="grid produtos-list">
-            <article class="prod-item">
-              <div class="prod-text">
-                <h3>Fornecimento para Indústria de Injeção</h3>
-                <p>
-                  Fornecimento de matéria-prima reciclada para empresas do setor plástico que buscam qualidade,
-                  estabilidade no processo produtivo e redução de impacto ambiental.
-                </p>
-              </div>
-              <figure class="figure">
-                <img data-img-base="granulado-proc-azul-01" alt="Processo industrial com granulado reciclado" />
-              </figure>
-            </article>
-
-            <article class="prod-item">
-              <div class="prod-text">
-                <h3>Processo de Alta Depuração</h3>
-                <p>
-                  Nosso processo garante granulados plásticos com maior pureza, estabilidade e desempenho para
-                  aplicações industriais.
-                </p>
-              </div>
-              <figure class="figure">
-                <img data-img-base="embalados-azul-01" alt="Embalagem e armazenamento de material reciclado" />
-              </figure>
-            </article>
-
-            <article class="prod-item">
-              <div class="prod-text">
-                <h3>Laboratório próprio</h3>
-                <p>
-                  Possuímos laboratório próprio para ensaios e desenvolvimento de cores conforme necessidade dos clientes.
-                  <span class="small">Obs.: não atuamos nas cores vermelha, amarela e preta.</span>
-                </p>
-              </div>
-              <figure class="figure">
-                <img data-img-base="carregado-mp-azul" alt="Material reciclado e controle em processo" />
-              </figure>
-            </article>
+          <div class="media">
+            <img src="granulado-verde-01.jpeg" alt="Granulado PP reciclado" />
           </div>
-        </div>
+        </article>
+
+        <article class="prod-item card">
+          <div class="prod-text">
+            <h3>Recebimento e controle de matéria-prima</h3>
+            <p>
+              Recebemos resíduos plásticos pós-indústria, com separação, controle e rastreabilidade. Trabalhamos com foco em consistência e segurança do processo.
+            </p>
+          </div>
+          <div class="media">
+            <img src="recebimento.png" alt="Processo de reciclagem e controle de matéria-prima" />
+          </div>
+        </article>
+
+        <article class="prod-item card">
+          <div class="prod-text">
+            <h3>Laboatório especializado</h3>
+            <p>
+              Temos laboratório profissional onde fazemos ensios e as análises das cores, conforme necessidade dos clientes.
+            </p>
+          </div>
+          <div class="media">
+            <img src="laboratorio.png" alt="Processo de ensaio e controle do processo das cores das matérias-primas" />
+          </div>
+        </article>
+
+        <article class="prod-item card">
+          <div class="prod-text">
+            <h3>Embalagens e fornecimento</h3>
+            <p>
+              Oferecemos fornecimento em embalagens adequadas para logística industrial, com padronização e organização para facilitar o recebimento e uso.
+            </p>
+          </div>
+          <div class="media">
+            <img src="embalados-azul-01.jpeg" alt="Embalagens e fornecimento de granulados" />
+          </div>
+        </article>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="cta">
-          <div>
-            <strong>Entre em contato e solicite informações sobre nossos granulados plásticos reciclados.</strong>
-            <div class="small">Atendimento via WhatsApp com Éder.</div>
-          </div>
-          <a class="btn btn-primary" href="https://wa.me/5541992146396?text=Olá!%20Gostaria%20de%20solicitar%20informações%20sobre%20os%20granulados%20plásticos%20reciclados%20da%20Recinject.">
-            Solicitar informações
-          </a>
+      <div class="cta-final">
+        <div>
+          <strong>Quer cotar granulados reciclados PP?</strong>
+          <div class="small">Atendimento via WhatsApp com Éder: (41) 99214-6396</div>
         </div>
+      </section>
       </div>
-    </section>
+     <a class="btn primary"
+   href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%21">
+  Falar no WhatsApp
+</a>
   </main>
 
-  <div data-include="footer"></div>
+  <!-- FOOTER (idêntico à HOME) -->
+  <footer class="site-footer">
+    <p><strong>Recinject Reciclados</strong> • CNPJ 47.807.223/0001-29</p>
+    <p>Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JS (mesmo padrão da HOME: scroll + menu mobile) -->
+  <script>
+    // Header muda ao rolar
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Menu mobile abre/fecha
+    function toggleMenu() {
+      document.getElementById("mobileNav").classList.toggle("active");
+    }
+  </script>
+
 </body>
 </html>

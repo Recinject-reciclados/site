@@ -1,124 +1,198 @@
-<!doctype html>
-<html
-  lang="pt-BR"
-  data-active="quem"
-  data-hero-title="Quem Somos"
-  data-hero-img="capa-quem-somos"
-  data-hero-overlay="0.72"
-  data-hero-show-logo="false"
->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Quem Somos | Recinject Reciclados</title>
-  <meta
-    name="description"
-    content="Conheça a Recinject Reciclados LTDA: atuação em reciclagem de matéria-prima plástica e produção de granulados PP reciclados pós-indústria."
-  />
+  <meta name="description" content="Conheça a Recinject Reciclados: reciclagem de matéria-prima plástica pós-indústria e fabricação de granulados reciclados com foco em qualidade e responsabilidade ambiental." />
+  <meta name="keywords" content="Recinject, Quem Somos, Reciclagem, Plásticos, Granulado PP, Sustentabilidade, São José dos Pinhais" />
+  <meta name="theme-color" content="#004d40" />
+  <link rel="canonical" href="https://recinjectreciclados.com.br/quem-somos.html" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- CSS base/global do site (mesmo da HOME) -->
+  <link rel="stylesheet" href="home.css" />
+  <!-- CSS específico desta página (somente <main>) -->
   <link rel="stylesheet" href="quem-somos.css" />
-  <script src="include.js" defer></script>
 
+  <!-- Schema (mantém boas práticas SEO sem mexer no conteúdo textual da página) -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Recinject Reciclados LTDA",
-  "url": "https://recinjectreciclados.com.br",
-  "logo": "https://recinjectreciclados.com.br/logo-recinject.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Maurilio da Cruz, 64",
-    "addressLocality": "São José dos Pinhais",
-    "addressRegion": "PR",
-    "postalCode": "83065-200",
-    "addressCountry": "BR"
-  },
-  "telephone": "+55 41 99214-6396",
-  "email": "contato@recinjectreciclados.com",
-  "sameAs": [
-    "https://www.facebook.com/RecinjectReciclados",
-    "https://www.linkedin.com/company/recinject-reciclados"
-  ]
-}
-</script>
-
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recinject Reciclados LTDA",
+    "url": "https://recinjectreciclados.com.br",
+    "logo": "https://recinjectreciclados.com.br/logo-recinject.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Maurilio da Cruz, 64",
+      "addressLocality": "São José dos Pinhais",
+      "addressRegion": "PR",
+      "postalCode": "83065-200",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://www.facebook.com/RecinjectReciclados",
+      "https://www.linkedin.com/company/recinject-reciclados"
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <!-- HEADER (copie/cole o MESMO da HOME) -->
+  <header class="site-header transparent">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Ir para a página inicial">
+        <img src="logo-recinject.png" alt="Recinject Reciclados" />
+        <span><strong>Recinject</strong> Reciclados</span>
+      </a>
 
-  <div data-include="header"></div>
-  <div data-include="hero"></div>
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html" class="active">Quem Somos</a>
+        <a href="produtos-servicos.html">Produtos e Serviços</a>
+        <a href="contato.html">Contato</a>
+      </nav>
 
-  <main id="conteudo">
-    <div class="container after-hero">
-      <section class="qs-top card">
-        <div class="grid cols-2 qs-grid">
-          <div>
-            <h2 class="section-title">A Recinject é especializada na reciclagem de matéria-prima plástica</h2>
-            <p class="section-lead">
-              Com foco na qualidade de nossos produtos, utilizamos <strong>matéria-prima pós-indústria</strong>,
-              garantindo um granulado reciclado de excelente padrão, com estabilidade, limpeza e confiabilidade
-              para aplicação na indústria.
-            </p>
-            <p class="qs-text">
-              Nossa atuação é voltada à transformação de resíduos plásticos que degradariam o meio ambiente,
-              devolvendo ao mercado esse material em forma reaproveitável, com qualidade e consistência.
-            </p>
-          </div>
+      <a href="contato.html" class="btn">Fale conosco</a>
 
-          <div class="media">
-            <img src="granulado-rosa-01.jpeg" alt="Granulado plástico reciclado (visual ilustrativo)" />
-          </div>
-        </div>
-      </section>
+      <!-- Botão do menu mobile (somente no mobile via CSS) -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false" type="button">
+        ☰
+      </button>
 
-      <section class="qs-obj">
-        <h2 class="section-title">Nosso Objetivo</h2>
+      <!-- Menu mobile -->
+      <div class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="produtos-servicos.html">Produtos e Serviços</a>
+        <a href="contato.html">Contato</a>
+        <a class="btn" href="contato.html" style="text-align:center;">Fale conosco</a>
+      </div>
+    </div>
+  </header>
 
-        <div class="card qs-obj-card">
-          <p>
-            Fornecer um produto diferenciado no mercado de reciclados, com extrema qualidade na matéria-prima produzida,
-            aliando <strong>eficiência produtiva</strong>, custo competitivo e <strong>responsabilidade ambiental</strong>.
+  <!-- JS (o mesmo da HOME): scroll + menu mobile -->
+  <script>
+    // Header: alterna classe "scrolled"
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Menu mobile: abrir/fechar
+    (function() {
+      const btn = document.getElementById('mobileMenuBtn');
+      const nav = document.getElementById('mobileNav');
+      if (!btn || !nav) return;
+
+      const close = () => {
+        nav.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      };
+
+      btn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Fecha ao clicar em um link
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+      // Fecha ao clicar fora
+      document.addEventListener('click', (e) => {
+        if (!nav.classList.contains('active')) return;
+        const inside = nav.contains(e.target) || btn.contains(e.target);
+        if (!inside) close();
+      });
+
+      // Fecha no ESC
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
+
+  <!-- HERO (visual igual ao da HOME, só muda o texto e imagem) -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('home-quem-somos.png');"></div>
+    <div class="container hero-content">
+    </div>
+  </section>
+
+  <!-- MAIN (conteúdo mantido – só encaixado no padrão) -->
+  <main class="content container" id="conteudo">
+    <section class="qs-intro">
+      <div class="qs-intro-inner grid cols-2">
+        <div>
+          <div class="kicker">Sobre a empresa</div>
+          <h2 class="section-title">A Recinject é especializada na reciclagem de matéria-prima plástica</h2>
+          <p class="section-lead">
+            Com foco na qualidade de nossos produtos, utilizamos <strong>matéria-prima pós-indústria</strong>,
+            garantindo um granulado reciclado de excelente padrão, com estabilidade, limpeza e confiabilidade
+            para aplicação na indústria.
+          </p>
+          <p class="qs-text">
+            Nossa atuação é voltada à transformação de resíduos plásticos que degradariam o meio ambiente,
+            devolvendo ao mercado esse material em forma reaproveitável, com qualidade e consistência.
           </p>
         </div>
 
-        <div class="grid cols-3 qs-values">
-          <article class="card qs-item">
-            <h3>Sustentabilidade ambiental</h3>
-            <p>Devolver plásticos reciclados ao mercado de forma responsável.</p>
-          </article>
-          <article class="card qs-item">
-            <h3>Qualidade técnica</h3>
-            <p>Granulados reciclados de alto padrão, com controle e consistência.</p>
-          </article>
-          <article class="card qs-item">
-            <h3>Ética e transparência</h3>
-            <p>Respeito e honestidade em todas as relações.</p>
-          </article>
-          <article class="card qs-item">
-            <h3>Eficiência produtiva</h3>
-            <p>Processos que buscam estabilidade e melhoria contínua.</p>
-          </article>
-          <article class="card qs-item">
-            <h3>Relação honesta</h3>
-            <p>Parcerias transparentes com clientes e fornecedores.</p>
-          </article>
+        <div class="media">
+          <img src="granulado-rosa-01.jpeg" alt="Granulado plástico reciclado (visual ilustrativo)" />
         </div>
+      </div>
+    </section>
 
-        <div class="cta-final">
-          <div>
-            <strong>Entre em contato e solicite informações sobre nossos granulados plásticos reciclados.</strong>
-            <div class="small">WhatsApp: (41) 99214-6396 – Éder</div>
-          </div>
-          <a class="btn primary" href="https://wa.me/5541992146396">Solicitar informações</a>
+    <section class="qs-obj">
+      <h2 class="section-title">Nosso Objetivo</h2>
+
+      <div class="card qs-obj-card">
+        <p>
+          Fornecer um produto diferenciado no mercado de reciclados, com extrema qualidade na matéria-prima produzida,
+          aliando <strong>eficiência produtiva</strong>, custo competitivo e <strong>responsabilidade ambiental</strong>.
+        </p>
+      </div>
+
+      <div class="grid cols-3 qs-values">
+        <article class="card qs-item">
+          <h3>Sustentabilidade ambiental</h3>
+          <p>Devolver plásticos reciclados ao mercado de forma responsável.</p>
+        </article>
+        <article class="card qs-item">
+          <h3>Qualidade técnica</h3>
+          <p>Granulados reciclados de alto padrão, com controle e consistência.</p>
+        </article>
+        <article class="card qs-item">
+          <h3>Ética e transparência</h3>
+          <p>Respeito e honestidade em todas as relações.</p>
+        </article>
+        <article class="card qs-item">
+          <h3>Eficiência produtiva</h3>
+          <p>Processos que buscam estabilidade e melhoria contínua.</p>
+        </article>
+        <article class="card qs-item">
+          <h3>Relação honesta</h3>
+          <p>Parcerias transparentes com clientes e fornecedores.</p>
+        </article>
+      </div>
+
+      <div class="cta-final">
+        <div>
+          <strong>Entre em contato e solicite informações sobre nossos granulados plásticos reciclados.</strong>
+          <div class="small">WhatsApp: (41) 99214-6396 – Éder</div>
         </div>
-      </section>
-    </div>
+        <a class="btn" href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+        >Solicitar informações</a>
+      </div>
+    </section>
   </main>
 
-  <div data-include="footer"></div>
+  <!-- FOOTER (mesmo padrão da HOME, simplificado como você pediu) -->
+  <footer class="site-footer">
+    <p><strong>Recinject Reciclados</strong> • CNPJ 47.807.223/0001-29</p>
+    <p>São José dos Pinhais • PR. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
