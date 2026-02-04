@@ -114,3 +114,71 @@
     height: 320px;
   }
 }
+
+/* =========================================================
+   HERO — AJUSTE ESPECÍFICO DA PÁGINA QUEM SOMOS
+   Objetivos:
+   - NÃO repetir imagem
+   - NÃO criar bordas laterais
+   - Mobile com menos "zoom"
+========================================================= */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 15%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+   height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0.15) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+}
+
+
+/* desktop / tablets */
+@media (min-width: 769px){
+  .page-qs .hero-bg{
+    background-size: cover;
+  }
+}
+
+/* MOBILE — controla o “zoom exagerado” */
+@media (max-width: 768px){
+  .page-qs .hero{
+    min-height: 260px;   /* evita esmagar */
+  }
+
+  .page-qs .hero-bg{
+    background-size: 90% auto;  /* encaixa melhor */
+    background-position: center top;
+  }
+}
+
+/* MOBILE MUITO PEQUENO */
+@media (max-width: 480px){
+  .page-qs .hero{
+    min-height: 220px;
+  }
+
+  .page-qs .hero-bg{
+    background-size: 92% auto;
+  }
+}

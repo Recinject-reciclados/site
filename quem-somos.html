@@ -10,12 +10,9 @@
   <meta name="theme-color" content="#004d40" />
   <link rel="canonical" href="https://recinjectreciclados.com.br/quem-somos.html" />
 
-  <!-- CSS base/global do site (mesmo da HOME) -->
   <link rel="stylesheet" href="home.css" />
-  <!-- CSS específico desta página (somente <main>) -->
   <link rel="stylesheet" href="quem-somos.css" />
 
-  <!-- Schema (mantém boas práticas SEO sem mexer no conteúdo textual da página) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,8 +36,9 @@
   </script>
 </head>
 
-<body>
-  <!-- HEADER (copie/cole o MESMO da HOME) -->
+<body class="page-qs">
+
+  <!-- HEADER -->
   <header class="site-header transparent">
     <div class="container">
       <a href="index.html" class="logo" aria-label="Ir para a página inicial">
@@ -57,12 +55,10 @@
 
       <a href="contato.html" class="btn">Fale conosco</a>
 
-      <!-- Botão do menu mobile (somente no mobile via CSS) -->
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false" type="button">
         ☰
       </button>
 
-      <!-- Menu mobile -->
       <div class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
         <a href="index.html">Início</a>
         <a href="quem-somos.html">Quem Somos</a>
@@ -73,65 +69,27 @@
     </div>
   </header>
 
-  <!-- JS (o mesmo da HOME): scroll + menu mobile -->
-  <script>
-    // Header: alterna classe "scrolled"
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.site-header');
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    });
+  <!-- HERO -->
+<section class="hero" aria-label="Capa da página">
+  <div class="hero-bg">
+    <img class="hero-img" src="home-quem-somos.png" alt="Granulado plástico azul sobre fundo claro" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container hero-content"> 
+</section>
 
-    // Menu mobile: abrir/fechar
-    (function() {
-      const btn = document.getElementById('mobileMenuBtn');
-      const nav = document.getElementById('mobileNav');
-      if (!btn || !nav) return;
 
-      const close = () => {
-        nav.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-      };
-
-      btn.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('active');
-        btn.setAttribute('aria-expanded', String(isOpen));
-      });
-
-      // Fecha ao clicar em um link
-      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-
-      // Fecha ao clicar fora
-      document.addEventListener('click', (e) => {
-        if (!nav.classList.contains('active')) return;
-        const inside = nav.contains(e.target) || btn.contains(e.target);
-        if (!inside) close();
-      });
-
-      // Fecha no ESC
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') close();
-      });
-    })();
-  </script>
-
-  <!-- HERO (visual igual ao da HOME, só muda o texto e imagem) -->
-  <section class="hero">
-    <div class="hero-bg" style="background-image: url('home-quem-somos.png');"></div>
-    <div class="container hero-content">
-    </div>
-  </section>
-
-  <!-- MAIN (conteúdo mantido – só encaixado no padrão) -->
+  <!-- MAIN -->
   <main class="content container" id="conteudo">
     <section class="qs-intro">
       <div class="qs-intro-inner grid cols-2">
         <div>
           <div class="kicker">Sobre a empresa</div>
-          <h2 class="section-title">A Recinject é especializada na reciclagem de matéria-prima plástica</h2>
+          <h2 class="section-title">A Recinject é especializada na reciclagem de Polipropileno de Injeção de Plástico</h2>
           <p class="section-lead">
-            Com foco na qualidade de nossos produtos, utilizamos <strong>matéria-prima pós-indústria</strong>,
-            garantindo um granulado reciclado de excelente padrão, com estabilidade, limpeza e confiabilidade
-            para aplicação na indústria.
+            Com foco na qualidade de nossos produtos,  utilizamos apenas matéria prima pós indústria, garantindo uma matéria prima reciclada, sem odor e sem contaminações. 
+Nossa matéria prima é 100% homogeneizada ,oque garante uma mesma cor e mesma fluidez dentro do lote , isso garante uma produção sem variações de processo ,evitando perdas de peças na Injeção,  garante a mesma cor do primeiro ao último saco do lote , trazendo um casamento perfeito de duas peças injetadas que precisam ter a mesma cor.
+Nossa atuação é voltada a transformação de resíduos Plásticos que degradariam o meio ambiente, devolvendo ao mercado esse material em forma reaproveitavel, com qualidade e consistência.
           </p>
           <p class="qs-text">
             Nossa atuação é voltada à transformação de resíduos plásticos que degradariam o meio ambiente,
@@ -177,22 +135,59 @@
           <p>Parcerias transparentes com clientes e fornecedores.</p>
         </article>
       </div>
+<div class="cta-final">
+    <div> <strong>Entre em contato e solicite informações sobre nossos granulados plásticos reciclados.</strong> </div>
+    <a class="btn" href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es">
+        <img src="icon-zap.png" alt="WhatsApp" class="icon-zap">
+        Fale conosco
+    </a>
+</div>
 
-      <div class="cta-final">
-        <div>
-          <strong>Entre em contato e solicite informações sobre nossos granulados plásticos reciclados.</strong>
-          <div class="small">WhatsApp: (41) 99214-6396 – Éder</div>
-        </div>
-        <a class="btn" href="https://wa.me/5541992146396?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
-        >Solicitar informações</a>
-      </div>
     </section>
   </main>
 
-  <!-- FOOTER (mesmo padrão da HOME, simplificado como você pediu) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <p><strong>Recinject Reciclados</strong> • CNPJ 47.807.223/0001-29</p>
     <p>São José dos Pinhais • PR. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- JS (scroll + menu mobile) -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    (function() {
+      const btn = document.getElementById('mobileMenuBtn');
+      const nav = document.getElementById('mobileNav');
+      if (!btn || !nav) return;
+
+      const close = () => {
+        nav.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      };
+
+      btn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+      document.addEventListener('click', (e) => {
+        if (!nav.classList.contains('active')) return;
+        const inside = nav.contains(e.target) || btn.contains(e.target);
+        if (!inside) close();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
+
 </body>
 </html>

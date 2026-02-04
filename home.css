@@ -150,12 +150,17 @@ video {
 html, body { height: 100%; }
 body { overflow-x: hidden; } /* evita estourar lateral e dar "zoom" visual */
 
-.hero{
+.hero {
   position: relative;
-  min-height: 100vh;   /* fallback */
-  min-height: 100svh;  /* melhor em navegadores modernos */
-  overflow: clip;      /* melhor que hidden (fallback abaixo) */
+  height: 80vh; /* antes provavelmente estava 90vh ou 100vh */
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
 }
+
 @supports not (overflow: clip){
   .hero{ overflow: hidden; }
 }
@@ -175,7 +180,10 @@ body { overflow-x: hidden; } /* evita estourar lateral e dar "zoom" visual */
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  background-size: cover;
+  background-position: center 15%; /* 🔥 aqui é o pulo do gato */
+  filter: brightness(0.65);
+  z-index: -1;
 }
 
 /* vídeo em si */
@@ -334,4 +342,23 @@ main.content {
   .mobile-menu-btn {
     display: block;
   }
+}
+
+/* ===============================
+   AJUSTE HERO NO MOBILE
+   Evita zoom exagerado da imagem
+================================ */
+@media (max-width: 768px){
+
+  .hero{
+    height: 70vh;
+    min-height: 420px;
+  }
+
+  .hero-bg{
+    background-size: 85% auto;
+    background-position: center top;
+    background-repeat: no-repeat; /* ✅ reforça no mobile */
+  }
+
 }
