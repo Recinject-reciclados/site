@@ -23,10 +23,9 @@ a {
   color: inherit;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+.container{
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
 }
 
 /* =========================================================
@@ -58,6 +57,10 @@ a {
   align-items: center;
   position: relative;
 }
+
+:root { --header-h: 76px; } /* já tem algo parecido, mantenha */
+body { padding-top: var(--header-h); }
+.hero { margin-top: calc(var(--header-h) * -1); }
 
 /* =========================================================
    LOGO
@@ -143,10 +146,29 @@ video {
 /* =========================================================
    HERO
 ========================================================= */
-.hero {
+/* Evita "corte" em zoom / Firefox e melhora responsividade */
+html, body { height: 100%; }
+body { overflow-x: hidden; } /* evita estourar lateral e dar "zoom" visual */
+
+.hero{
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;   /* fallback */
+  min-height: 100svh;  /* melhor em navegadores modernos */
+  overflow: clip;      /* melhor que hidden (fallback abaixo) */
+}
+@supports not (overflow: clip){
+  .hero{ overflow: hidden; }
+}
+
+/* Centraliza conteúdo sem depender de padding gigante */
+.hero-content{
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  /* em vez de padding-top fixo que pode estourar em zoom */
+  padding: calc(76px + 48px) 0 48px; /* header(aprox) + respiro */
 }
 
 /* container do vídeo */
@@ -187,22 +209,9 @@ video {
 }
 
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.hero h2 {
-  font-size: 28px;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 18px;
-  max-width: 600px;
-  margin: 0 auto 24px;
-}
+.hero h1 { font-size: clamp(32px, 4vw, 52px); }
+.hero h2 { font-size: clamp(18px, 2.2vw, 30px); }
+.hero p  { font-size: clamp(15px, 1.3vw, 18px); padding: 0 14px; }
 
 /* =========================================================
    CONTEÚDO
