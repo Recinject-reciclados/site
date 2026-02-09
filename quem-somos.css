@@ -155,16 +155,9 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.35) 40%,
-    rgba(0, 0, 0, 0.15) 70%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: rgba(0,0,0,0.02); /* bem leve */
   z-index: 1;
 }
-
 
 /* desktop / tablets */
 @media (min-width: 769px){
@@ -206,4 +199,22 @@
     height: 20px;
 }
 
+/* =========================================================
+   AJUSTE DA IMAGEM DA CAPA — SOMENTE DESKTOP
+   Mantém o hero padrão, ajusta só o "zoom" da imagem
+========================================================= */
+@media (min-width: 769px){
 
+  .page-qs .hero-img{
+    object-fit: cover;
+    object-position: center 5%; /* mostra mais o topo */
+  }
+
+  /* se estiver usando background-image em vez de <img> */
+  .page-qs .hero-bg{
+    background-size: 100% auto;  /* 🔑 menos zoom */
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+}
