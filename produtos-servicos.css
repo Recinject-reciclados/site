@@ -95,3 +95,14 @@
     background-size: 92% auto;
   }
 }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-zap {
+    width: 20px; /* Ajuste o tamanho do ícone */
+    height: 20px;
+}
